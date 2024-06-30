@@ -1,0 +1,16 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /auth
+spring:
+  application:
+    name: auth
+eureka:
+  instance:
+    hostname: cloud-gateway-service
+    prefer-ip-address: true
+  client: #服务提供者provider注册进eureka服务列表内
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://localhost:8761/eureka
